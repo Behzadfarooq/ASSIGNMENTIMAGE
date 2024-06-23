@@ -43,9 +43,7 @@ services:
       - kafka_network
 
   producer:
-    build:
-      context: ./producer
-      dockerfile: Dockerfile
+    image: behzadfarooq/kafka_assignment:producer
     depends_on:
       - kafka
     environment:
@@ -59,9 +57,7 @@ services:
       - kafka_network
 
   consumer:
-    build:
-      context: ./consumer
-      dockerfile: Dockerfile
+    image: behzadfarooq/kafka_assignment:consumer
     depends_on:
       - producer
       - mysql
